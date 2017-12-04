@@ -85,7 +85,8 @@ namespace nissa
 		su3_summ_the_prod_double(temp0,stap,alpha2/2);
 		
 		//project the resulting link onto su3
-		su3_unitarize_maximal_trace_projecting(dec2_conf[ire0][A],temp0);
+		//////		su3_unitarize_maximal_trace_projecting(dec2_conf[ire0][A],temp0);
+		su3_copy(dec2_conf[ire0][A],temp0);
 	      }
 	    
 	    //communicate borders for future usage
@@ -148,7 +149,8 @@ namespace nissa
 	      
 	      //summ the two staples with appropriate coef and project the resulting link onto su3
 	      su3_summ_the_prod_double(temp0,stap,alpha1/4);
-	      su3_unitarize_maximal_trace_projecting(dec1_conf[ire0][A],temp0);
+	      //////	      su3_unitarize_maximal_trace_projecting(dec1_conf[ire0][A],temp0);
+	      su3_copy(dec1_conf[ire0][A],temp0);
 	    }
 	    
 	  //communicate borders for future usage
@@ -204,7 +206,8 @@ namespace nissa
 	    
 	    //summ the two staples with appropriate coef and project the resulting link onto su3
 	    su3_summ_the_prod_double(temp0,stap,alpha0/6);
-	    su3_unitarize_maximal_trace_projecting(sm_conf[A][mu],temp0);
+	    //////	    su3_unitarize_maximal_trace_projecting(sm_conf[A][mu],temp0);
+	    su3_copy(sm_conf[A][mu],temp0);
 	  }
       else
 	if(sm_conf!=conf)
